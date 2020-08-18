@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_todolist_app/screen/posting_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -54,17 +55,10 @@ class _HomeScreenState extends State<HomeScreen> {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          subtitle: Text(
-                            "Detail To do list  $index",
-                            style: TextStyle(
-                                color: Colors.grey[700],
-                                fontWeight: FontWeight.normal),
-                          ),
                           trailing: Icon(
                             Icons.check_circle,
                             color: Colors.greenAccent,
                           ),
-                          isThreeLine: true,
                         );
                       },
                       itemCount: 20,
@@ -75,6 +69,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: FloatingActionButton(
                       child: Icon(Icons.add, color: Colors.white),
                       backgroundColor: Colors.deepOrange,
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => PostingScreen()),
+                        );
+                      },
                     ),
                     top: -10,
                     right: 40,
